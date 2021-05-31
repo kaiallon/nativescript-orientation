@@ -4,8 +4,8 @@ You can use this file to perform app-level initialization, but the primary
 purpose of the file is to pass control to the app’s first module.
 */
 
-const application = require("tns-core-modules/application");
-require('nativescript-orientation');
+const application = require("@nativescript/core/application");
+require("nativescript-orientation");
 
 application.run({ moduleName: "app-root" });
 

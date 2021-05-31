@@ -1,28 +1,25 @@
-var orientation = require('nativescript-orientation');
-
+var orientation = require("nativescript-orientation");
 
 var page, lockElem;
-exports.pageLoaded = function(args) {
+exports.pageLoaded = function (args) {
     page = args.object;
-    lockElem = page.getViewById('lock');
+    lockElem = page.getViewById("lock");
 };
 
-exports.portrait = function() {
+exports.portrait = function () {
     orientation.setOrientation("portrait");
     lock = true;
     lockElem.text = "Unlock";
 };
 
-exports.landscape = function() {
+exports.landscape = function () {
     orientation.setOrientation("landscape");
     lock = true;
     lockElem.text = "Unlock";
-
 };
 
-
 var lock = false;
-exports.lock = function() {
+exports.lock = function () {
     lock = !lock;
     if (lock) {
         orientation.disableRotation();
@@ -33,13 +30,11 @@ exports.lock = function() {
     }
 };
 
-
-
-exports.orientation = function(args) {
+exports.orientation = function (args) {
     console.log("Orientation was changed, is Landscape?", args.landscape);
 };
 
-exports.nav = function() {
-    var frame = require('tns-core-modules/ui/frame');
+exports.nav = function () {
+    var frame = require("@nativescript/core/ui/frame");
     frame.topmost().navigate({ moduleName: "main-page", clearHistory: true });
 };
