@@ -1,9 +1,0 @@
-demo/
-.git/
-.gitignore
-.idea/
-docs/
-*.tar
-*.tgz
-.npmignore
-node_modules/
