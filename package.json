@@ -22,8 +22,8 @@
 				"url": "https://proplugins.org/proplugins/nativescript-orientation.git"
 		},
 		"dependencies": {
-				"nativescript-globalevents": "git+git@github.com:imandyie/nativescript-globalevents.git",
-				"nativescript-dom": "git+git@github.com:imandyie/nativescript-dom.git"
+				"nativescript-globalevents": "git+https://github.com/imandyie/nativescript-globalevents.git",
+				"nativescript-dom": "git+https://github.com/imandyie/nativescript-dom.git"
 		},
 		"keywords": [
 				"NativeScript",
