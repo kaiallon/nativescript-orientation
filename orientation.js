@@ -74,9 +74,9 @@ if (global.android) {
 
     switch (currentOrientation) {
       case 2 /* LANDSCAPE */:
-        return enums.DeviceOrientation.landscape;
+        return enums.CoreTypes.DeviceOrientation.landscape;
       case 1 /* PORTRAIT */:
-        return enums.DeviceOrientation.portrait;
+        return enums.CoreTypes.DeviceOrientation.portrait;
       default:
         break;
     }
@@ -88,9 +88,9 @@ if (global.android) {
       .getDefaultDisplay()
       .getRealMetrics(metrics);
     if (metrics.widthPixels > metrics.heightPixels) {
-      return enums.DeviceOrientation.landscape;
+      return enums.CoreTypes.DeviceOrientation.landscape;
     }
-    return enums.DeviceOrientation.portrait;
+    return enums.CoreTypes.DeviceOrientation.portrait;
   };
 
   orientation.enableRotation = function () {
@@ -197,18 +197,18 @@ if (global.android) {
     switch (device.orientation) {
       case UIDeviceOrientation.UIDeviceOrientationLandscapeRight:
       case UIDeviceOrientation.UIDeviceOrientationLandscapeLeft:
-        return enums.DeviceOrientation.landscape;
+        return enums.CoreTypes.DeviceOrientation.landscape;
       case UIDeviceOrientation.UIDeviceOrientationPortraitUpsideDown:
       case UIDeviceOrientation.UIDeviceOrientationPortrait:
-        return enums.DeviceOrientation.portrait;
+        return enums.CoreTypes.DeviceOrientation.portrait;
       default:
         // Since we have a up/Down orientation, we need to see what the statusbar is set to to get the actual current device orientation
         var appOrientation =
           UIApplication.sharedApplication.statusBarOrientation;
         if (appOrientation === 1 || appOrientation === 2) {
-          return enums.DeviceOrientation.portrait;
+          return enums.CoreTypes.DeviceOrientation.portrait;
         } else {
-          return enums.DeviceOrientation.landscape;
+          return enums.CoreTypes.DeviceOrientation.landscape;
         }
     }
   };
@@ -358,7 +358,7 @@ var applyOrientationToPage = function (page, args) {
   if (!currentOrientation) return;
 
   // Check what the current rotation vs the existing page rotation is
-  var isLandscape = currentOrientation === enums.DeviceOrientation.landscape;
+  var isLandscape = currentOrientation === enums.CoreTypes.DeviceOrientation.landscape;
   if (!args || !args.force) {
     var containsLandScape = page.classList.contains("landscape");
 
